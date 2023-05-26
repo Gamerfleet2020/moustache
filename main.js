@@ -8,15 +8,15 @@ video.size(400, 400)
 
 poseNet = ml5.poseNet(video, modelLoaded);
 poseNet.on('pose', gotPoses);
-nose_X=0;
-pose_Y=0;
+moustache_X=0;
+moustache_Y=0;
 }
 function preload(){
     clown=loadImage("https://i.postimg.cc/1tXTqJqT/images-removebg-preview.png")
 }
 function draw(){
 image(video, 0, 0, 400, 400);
-image(clown, nose_X, nose_Y, 30, 30);
+image(moustache, nose_X, nose_Y, 30, 30);
 
 }
 
@@ -36,8 +36,8 @@ if(results.length > 0)
 {
 console.log(results);
 console.log("nose x=" + results[0].pose.nose.x)
-nose_X= results[0].pose.nose.x
-nose_Y= results[0].pose.nose.y
+moustache_X= results[0].pose.nose.x
+moustache_Y= results[0].pose.nose.y
 console.log("nose y=" + results[0].pose.nose.y)
 }
 
